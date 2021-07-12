@@ -1,7 +1,6 @@
 import { Context } from "./index";
 import Cookies from "js-cookie";
 import * as schemas from "../requests/schemas";
-import { ZodEffects } from "zod";
 
 export const todos = {
   getAll: async ({ state, effects }: Context) => {
@@ -62,7 +61,6 @@ export const todos = {
 
 export const user = {
   logout: ({ state, actions }: Context) => {
-    console.log("user logout clicked");
     Cookies.remove("UserToken");
     state.user.loggedIn = false;
     actions.notification.show({
@@ -116,6 +114,8 @@ export const login = {
     const { message, success } = response;
     console.log(response);
     if (success) {
+      if (!Cookies.get("UserToken"))
+        Cookies.set("UserToken", response.data.token);
       state.user.name = response.data.name;
       state.todos = response.data.todos;
       state.user.loggedIn = true;
@@ -148,6 +148,8 @@ export const signup = {
     const response = await effects.api.user.signup(newUser);
     const { data, message, success } = response;
     if (success) {
+      if (!Cookies.get("UserToken"))
+        Cookies.set("UserToken", response.data.token);
       state.user.name = data.name;
       state.user.loggedIn = true;
       state.login.active = true;
