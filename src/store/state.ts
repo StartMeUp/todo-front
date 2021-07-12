@@ -5,8 +5,8 @@ export const state: State = {
   todoUpdate: { title: "", description: "" },
   user: { name: "", surname: "", email: "", loggedIn: false },
   login: {
-    email: "chrislep62@gmail.com",
-    password: "azertyazerty",
+    email: "",
+    password: "",
     active: true,
   },
   signup: { name: "", surname: "", email: "", password: "" },
