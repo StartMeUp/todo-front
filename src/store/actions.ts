@@ -112,7 +112,6 @@ export const login = {
   ) => {
     const response = await effects.api.user.signin(data);
     const { message, success } = response;
-    console.log(response);
     if (success) {
       if (!Cookies.get("UserToken"))
         Cookies.set("UserToken", response.data.token);
@@ -148,8 +147,7 @@ export const signup = {
     const response = await effects.api.user.signup(newUser);
     const { data, message, success } = response;
     if (success) {
-      if (!Cookies.get("UserToken"))
-        Cookies.set("UserToken", response.data.token);
+      if (!Cookies.get("UserToken")) Cookies.set("UserToken", data.token);
       state.user.name = data.name;
       state.user.loggedIn = true;
       state.login.active = true;

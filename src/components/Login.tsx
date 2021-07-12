@@ -1,6 +1,7 @@
 import React from "react";
 import { useActions, useAppState } from "../store";
 import { customError } from "../requests/customError";
+import Cookies from "js-cookie";
 
 const Login = () => {
   const actions = useActions();
