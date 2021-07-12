@@ -1,0 +1,89 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body {
+    @apply bg-gray-100;
+  }
+
+  main {
+    @apply p-4;
+  }
+
+  h1 {
+    @apply text-3xl uppercase text-gray-600;
+  }
+
+  h2 {
+    @apply text-xl uppercase text-gray-600;
+  }
+
+  form {
+    @apply p-10 bg-white rounded flex justify-center items-center flex-col shadow-md;
+  }
+
+  form h1 {
+    @apply mb-5;
+  }
+
+  input {
+    @apply mb-5 p-3 w-80 focus:border-purple-700 rounded border-2 outline-none;
+  }
+
+  button[type="submit"],
+  .logout,
+  #edit button {
+    @apply bg-purple-600 hover:bg-purple-900 text-white font-bold p-2 rounded w-full;
+  }
+
+  .logout {
+    @apply text-base w-auto;
+  }
+
+  .notification {
+    @apply fixed right-6 bottom-6 border-2 rounded p-3 w-80 bg-white;
+  }
+
+  #dashboard {
+    @apply border rounded mx-auto max-w-xl bg-white my-10;
+  }
+
+  header {
+    @apply flex justify-between p-4 shadow items-center;
+  }
+
+  .todo {
+    @apply border rounded-sm p-2 my-2 flex justify-between items-start;
+  }
+
+  .completed {
+    @apply rounded px-2 py-1 text-white flex-shrink-0;
+  }
+
+  .done {
+    @apply bg-green-600;
+  }
+
+  .notDone {
+    @apply bg-yellow-600;
+  }
+
+  .createTodo input,
+  .todo input {
+    @apply w-full;
+  }
+
+  .edit {
+    @apply flex items-center ml-6 flex-shrink-0;
+  }
+
+  label {
+    @apply font-bold;
+  }
+
+  .edit button {
+    @apply mx-1;
+  }
+}
