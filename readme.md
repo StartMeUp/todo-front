@@ -1,6 +1,6 @@
 # Yet another todo front-end
 
-This backend is only some kind of playground to test and show the implementation of libraries and good practices.
+This front-end is only some kind of playground to test and show the implementation of libraries and good practices.
 
 The app can be viewed and tested here: https://todo-front-smu.pages.dev/ .
 
