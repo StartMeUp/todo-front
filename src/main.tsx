@@ -8,7 +8,7 @@ import { createOvermind } from "overmind";
 import { config } from "./store";
 
 const overmind = createOvermind(config, {
-  devtools: false, // defaults to 'localhost:3031'
+  devtools: true, // defaults to 'localhost:3031'
 });
 
 ReactDOM.render(
